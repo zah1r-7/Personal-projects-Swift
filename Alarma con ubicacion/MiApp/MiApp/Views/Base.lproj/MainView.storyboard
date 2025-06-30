@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VDu-nK-wS1">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kby-XZ-mM3">
+                                <rect key="frame" x="17" y="74" width="341" height="578"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona la línea del metro en la que te encuentras:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cas-cE-FVB">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="54.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7az-w8-ipp">
+                                        <rect key="frame" x="0.0" y="74.5" width="341" height="503.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1so-4s-9Ah">
+                                                <rect key="frame" x="0.0" y="0.0" width="341" height="74"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-rA-aJs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 1">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.8392156959" green="0.45098042490000001" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aiw-2p-jHz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eI-sw-NAq">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 2">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.1607843041" green="0.37647059560000001" blue="0.64313727620000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JYf-lH-keM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ga6-l8-ava">
+                                                <rect key="frame" x="0.0" y="86" width="341" height="74"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-GA-Q3i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 3">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.67450982329999998" green="0.62352943419999995" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ve9-9L-qK0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48r-EG-dV7">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 4">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.50196081400000003" green="0.70980393890000004" blue="0.68235301969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C3g-MP-6yC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M3E-MN-6qI">
+                                                <rect key="frame" x="0.0" y="172" width="341" height="74"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wa-MF-gac">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 5">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.97254902119999997" green="0.87450981139999995" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TRi-K1-ynE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRh-zw-UHE">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 6">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.91764706370000004" green="0.21568629149999999" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Flt-if-AtU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hG3-mu-eQG">
+                                                <rect key="frame" x="0.0" y="258" width="341" height="73.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPV-QX-Zxe">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="73.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 7">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.92941176889999999" green="0.42745098469999998" blue="0.18039217590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcD-Pa-0Jo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-Hy-IDf">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="73.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 8">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.231372565" green="0.5176470876" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qpv-J7-oFz"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZNC-Zc-FlE">
+                                                <rect key="frame" x="0.0" y="343.5" width="341" height="74"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feC-qY-1k7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 9">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.33333334329999997" green="0.18039217590000001" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pGP-gn-xsX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="A" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioo-I3-WNV">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea A">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.58823531870000001" green="0.19607841970000001" blue="0.47450977560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W4R-ra-TZN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TEZ-je-zdt">
+                                                <rect key="frame" x="0.0" y="429.5" width="341" height="74"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="B" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vds-1z-bZa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea B">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.69019609689999994" green="0.65882354970000001" blue="0.66274511810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YoW-Fw-Zdi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-pU-nwA">
+                                                        <rect key="frame" x="178" y="0.0" width="163" height="74"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Línea 12">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <color key="baseBackgroundColor" red="0.70980393890000004" green="0.62352943419999995" blue="0.36078432199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="lineButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bz1-N6-S9Y"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kby-XZ-mM3" secondAttribute="trailing" constant="17" id="HFG-WG-Ysv"/>
+                            <constraint firstItem="kby-XZ-mM3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="17" id="Pdz-sj-2F1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kby-XZ-mM3" secondAttribute="bottom" constant="15" id="jIF-wm-McF"/>
+                            <constraint firstItem="kby-XZ-mM3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="sDd-bc-Ayz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lY0-PF-38X"/>
+                    <connections>
+                        <segue destination="6Ef-RN-EdV" kind="show" identifier="selectTripDirectionViewSegue" id="lYa-vO-ciZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.35877862595419" y="-10.563380281690142"/>
+        </scene>
+        <!--Trip Direction View Controller-->
+        <scene sceneID="0T9-aR-DOO">
+            <objects>
+                <viewController id="6Ef-RN-EdV" customClass="TripDirectionViewController" customModule="MiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DA7-GK-WVX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="S90-mw-b0Z">
+                                <rect key="frame" x="10" y="74" width="355" height="583"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona la dirección a la que vas:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0U-qQ-X8g">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mxp-EL-m2z">
+                                        <rect key="frame" x="0.0" y="49" width="355" height="172.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK6-5p-PHD">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="172.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bK6-5p-PHD" secondAttribute="height" multiplier="1:1" id="EQW-ga-B5g"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="firstStationButton:" destination="D1X-Z9-Gek" eventType="touchUpInside" id="0YX-nt-Irb"/>
+                                                    <action selector="stationButtonPressed:" destination="6Ef-RN-EdV" eventType="touchUpInside" id="p5b-c5-cm5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbQ-3h-207">
+                                                <rect key="frame" x="182.5" y="0.0" width="172.5" height="172.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cbQ-3h-207" secondAttribute="height" multiplier="1:1" id="DlH-H5-jKi"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="stationButtonPressed:" destination="6Ef-RN-EdV" eventType="touchUpInside" id="Aqw-Pm-leK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbW-RW-KnZ">
+                                        <rect key="frame" x="0.0" y="246.5" width="355" height="336.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="x5J-hn-ake"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="S90-mw-b0Z" firstAttribute="leading" secondItem="x5J-hn-ake" secondAttribute="leading" constant="10" id="J6s-lv-mde"/>
+                            <constraint firstItem="x5J-hn-ake" firstAttribute="trailing" secondItem="S90-mw-b0Z" secondAttribute="trailing" constant="10" id="Lxf-If-vzf"/>
+                            <constraint firstItem="x5J-hn-ake" firstAttribute="bottom" secondItem="S90-mw-b0Z" secondAttribute="bottom" constant="10" id="fB0-nS-Gzq"/>
+                            <constraint firstItem="S90-mw-b0Z" firstAttribute="top" secondItem="x5J-hn-ake" secondAttribute="top" constant="10" id="xRw-dd-K9L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e35-Er-Gt7"/>
+                    <connections>
+                        <outlet property="firstStationButton" destination="bK6-5p-PHD" id="Hcy-8M-aYQ"/>
+                        <outlet property="lastStationButton" destination="cbQ-3h-207" id="NZc-w0-l6Q"/>
+                        <segue destination="JNd-Gh-4TG" kind="show" identifier="tableViewSegue" id="oZG-Hv-2a0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uzD-7h-LwF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="D1X-Z9-Gek" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="-11"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="RZF-4D-6Fc">
+            <objects>
+                <tableViewController id="JNd-Gh-4TG" customClass="TableViewController" customModule="MiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fRd-tX-Tgq" userLabel="Table view">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="labelColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="metroStationCell" rowHeight="120" id="2Fl-fT-rdJ" customClass="MetroStationTableViewCell" customModule="MiApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Fl-fT-rdJ" id="Y2A-sn-rMz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RMR-gT-M4o">
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="YFf-K4-V8s"/>
+                                                <constraint firstAttribute="width" constant="100" id="gim-4q-XND"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKK-cp-AFw">
+                                            <rect key="frame" x="125" y="21" width="229" height="26.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHi-8U-4Xf">
+                                            <rect key="frame" x="125" y="62.5" width="229" height="19"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WHi-8U-4Xf" firstAttribute="leading" secondItem="RMR-gT-M4o" secondAttribute="trailing" constant="15" id="DUv-Pa-EN8"/>
+                                        <constraint firstItem="RMR-gT-M4o" firstAttribute="top" secondItem="Y2A-sn-rMz" secondAttribute="top" constant="10" id="GMp-6m-vbz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WHi-8U-4Xf" secondAttribute="trailing" constant="5" id="LCZ-pe-m9a"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xKK-cp-AFw" secondAttribute="trailing" constant="5" id="TgX-Q2-DjI"/>
+                                        <constraint firstItem="xKK-cp-AFw" firstAttribute="leading" secondItem="RMR-gT-M4o" secondAttribute="trailing" constant="15" id="geh-dQ-qnj"/>
+                                        <constraint firstAttribute="bottom" secondItem="RMR-gT-M4o" secondAttribute="bottom" constant="10" id="hNO-Ip-A2G"/>
+                                        <constraint firstItem="WHi-8U-4Xf" firstAttribute="top" secondItem="xKK-cp-AFw" secondAttribute="bottom" constant="15" id="iH5-fK-JGh"/>
+                                        <constraint firstItem="RMR-gT-M4o" firstAttribute="leading" secondItem="Y2A-sn-rMz" secondAttribute="leading" constant="10" id="kcv-1T-EgQ"/>
+                                        <constraint firstItem="xKK-cp-AFw" firstAttribute="top" secondItem="Y2A-sn-rMz" secondAttribute="topMargin" constant="10" id="uaq-Qr-tXt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="otherLinesConnectionLabel" destination="WHi-8U-4Xf" id="IdL-Pq-J0a"/>
+                                    <outlet property="stationNameLabel" destination="xKK-cp-AFw" id="AEQ-LC-RNl"/>
+                                    <outlet property="stationSymbolImageView" destination="RMR-gT-M4o" id="nc9-CO-j0V"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JNd-Gh-4TG" id="DNM-r4-95m"/>
+                            <outlet property="delegate" destination="JNd-Gh-4TG" id="Awe-On-DhC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Rj3-jj-2pz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R85-XD-2Fn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2434" y="-11"/>
+        </scene>
+        <!--Selected Station View Controller-->
+        <scene sceneID="b42-ik-Cs3">
+            <objects>
+                <viewController storyboardIdentifier="selectStationVC" id="Znd-5J-w3i" customClass="selectedStationViewController" customModule="MiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3Q-LG-5h2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balderas" translatesAutoresizingMaskIntoConstraints="NO" id="A6r-89-hFG">
+                                <rect key="frame" x="60" y="50" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="A6r-89-hFG" secondAttribute="height" multiplier="1:1" id="wez-LJ-eGe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Líneas de conexión:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdH-J6-CFY">
+                                <rect key="frame" x="16" y="340" width="151" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjn-2s-ReI">
+                                <rect key="frame" x="175" y="340" width="36" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lugares de interés:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIi-nd-vIg">
+                                <rect key="frame" x="16" y="376" width="343" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpa-Cg-VUu">
+                                <rect key="frame" x="16" y="402" width="343" height="108.5"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nibh nisi, posuere iaculis justo faucibus, sollicitudin scelerisque erat. bscbjsbjbsjjhhshcshbncscbn</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss1-rb-V23">
+                                <rect key="frame" x="105" y="560.5" width="165" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Establecer destino">
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="setDestinationButtonPressed:" destination="Znd-5J-w3i" eventType="touchUpInside" id="M0P-z2-7AF"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvR-eZ-vnH">
+                                <rect key="frame" x="122.5" y="560.5" width="130.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cancelar viaje">
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelTripButtonPressed:" destination="Znd-5J-w3i" eventType="touchUpInside" id="leW-q0-ESZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2lA-0n-63B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BIi-nd-vIg" firstAttribute="top" secondItem="EdH-J6-CFY" secondAttribute="bottom" constant="15" id="1ch-r8-Nkf"/>
+                            <constraint firstAttribute="trailing" secondItem="A6r-89-hFG" secondAttribute="trailing" constant="60" id="5GS-aB-qcZ"/>
+                            <constraint firstItem="2lA-0n-63B" firstAttribute="trailing" secondItem="BIi-nd-vIg" secondAttribute="trailing" constant="16" id="7bU-Wy-axP"/>
+                            <constraint firstItem="A6r-89-hFG" firstAttribute="top" secondItem="2lA-0n-63B" secondAttribute="top" constant="30" id="9QZ-jO-idv"/>
+                            <constraint firstItem="DvR-eZ-vnH" firstAttribute="centerX" secondItem="f3Q-LG-5h2" secondAttribute="centerX" id="AEj-QQ-gQq"/>
+                            <constraint firstItem="Xjn-2s-ReI" firstAttribute="top" secondItem="A6r-89-hFG" secondAttribute="bottom" constant="35" id="AXB-y3-yBa"/>
+                            <constraint firstItem="A6r-89-hFG" firstAttribute="leading" secondItem="f3Q-LG-5h2" secondAttribute="leading" constant="60" id="LQa-bH-hLU"/>
+                            <constraint firstItem="EdH-J6-CFY" firstAttribute="top" secondItem="A6r-89-hFG" secondAttribute="bottom" constant="35" id="O4c-H4-lq2"/>
+                            <constraint firstItem="ss1-rb-V23" firstAttribute="centerX" secondItem="f3Q-LG-5h2" secondAttribute="centerX" id="Uff-aj-A3X"/>
+                            <constraint firstItem="2lA-0n-63B" firstAttribute="trailing" secondItem="Mpa-Cg-VUu" secondAttribute="trailing" constant="16" id="YIn-mo-7w6"/>
+                            <constraint firstItem="Mpa-Cg-VUu" firstAttribute="leading" secondItem="f3Q-LG-5h2" secondAttribute="leading" constant="16" id="Zkc-TS-dAd"/>
+                            <constraint firstItem="ss1-rb-V23" firstAttribute="top" secondItem="Mpa-Cg-VUu" secondAttribute="bottom" constant="50" id="aWk-qk-EkE"/>
+                            <constraint firstItem="EdH-J6-CFY" firstAttribute="leading" secondItem="2lA-0n-63B" secondAttribute="leading" constant="16" id="gV9-4n-K5t"/>
+                            <constraint firstItem="BIi-nd-vIg" firstAttribute="leading" secondItem="2lA-0n-63B" secondAttribute="leading" constant="16" id="i1E-A5-dJt"/>
+                            <constraint firstItem="Xjn-2s-ReI" firstAttribute="leading" secondItem="EdH-J6-CFY" secondAttribute="trailing" constant="8" symbolic="YES" id="s8D-N4-tu5"/>
+                            <constraint firstItem="Mpa-Cg-VUu" firstAttribute="top" secondItem="BIi-nd-vIg" secondAttribute="bottom" constant="5" id="t64-0Z-UGm"/>
+                            <constraint firstItem="DvR-eZ-vnH" firstAttribute="top" secondItem="Mpa-Cg-VUu" secondAttribute="bottom" constant="50" id="w1j-eB-zV9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelTripButton" destination="DvR-eZ-vnH" id="4Vs-9w-f1u"/>
+                        <outlet property="landmarksLabel" destination="Mpa-Cg-VUu" id="JgH-WY-d3X"/>
+                        <outlet property="otherLinesConnectionLabel" destination="Xjn-2s-ReI" id="Mtv-5m-JaV"/>
+                        <outlet property="setDestinationButton" destination="ss1-rb-V23" id="Rpa-sq-i4Q"/>
+                        <outlet property="stationSymbolImageView" destination="A6r-89-hFG" id="Bjw-ng-9ga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPA-ec-WtF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3325.5999999999999" y="-11.244377811094454"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ktV-Ox-dwQ">
+            <objects>
+                <viewController id="mTj-UB-3i3" customClass="MapViewController" customModule="MiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ulH-dB-HJC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDP-Mn-8Vq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="abu-Jo-aZi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DDP-Mn-8Vq" secondAttribute="trailing" id="ANu-wL-QC6"/>
+                            <constraint firstItem="DDP-Mn-8Vq" firstAttribute="leading" secondItem="ulH-dB-HJC" secondAttribute="leading" id="IH2-RM-7g4"/>
+                            <constraint firstItem="DDP-Mn-8Vq" firstAttribute="bottom" secondItem="ulH-dB-HJC" secondAttribute="bottom" id="Ivq-oC-OG8"/>
+                            <constraint firstItem="DDP-Mn-8Vq" firstAttribute="top" secondItem="ulH-dB-HJC" secondAttribute="top" id="MY3-hb-fr6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VQc-OW-iqs"/>
+                    <connections>
+                        <outlet property="mapView" destination="DDP-Mn-8Vq" id="A5A-Iz-L7m"/>
+                        <segue destination="zWj-ew-C5Y" kind="unwind" identifier="unwindToMainViewSegue" unwindAction="unwindToMainView:" id="N8N-Hh-bE8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWu-4C-YVo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zWj-ew-C5Y" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4294" y="819"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yrD-5f-xDV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VDu-nK-wS1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBw-QR-k9k">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="l92-at-snC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iii-cd-v3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="-11"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="balderas" width="1024" height="1024"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
