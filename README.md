@@ -1,1 +1,0 @@
-This is an iOs app of an alarm that works with the device location
